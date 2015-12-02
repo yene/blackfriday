@@ -80,68 +80,68 @@ func doTestsBlockWithRunner(t *testing.T, tests []string, extensions int, runner
 func TestPrefixHeaderNoExtensions(t *testing.T) {
 	var tests = []string{
 		"# Header 1\n",
-		"<h1>Header 1</h1>\n",
+		"<h2>Header 1</h2>\n",
 
 		"## Header 2\n",
-		"<h2>Header 2</h2>\n",
+		"<h3>Header 2</h3>\n",
 
 		"### Header 3\n",
-		"<h3>Header 3</h3>\n",
+		"<h4>Header 3</h4>\n",
 
 		"#### Header 4\n",
-		"<h4>Header 4</h4>\n",
+		"<h5>Header 4</h5>\n",
 
 		"##### Header 5\n",
-		"<h5>Header 5</h5>\n",
+		"<h6>Header 5</h6>\n",
 
 		"###### Header 6\n",
-		"<h6>Header 6</h6>\n",
+		"<h7>Header 6</h7>\n",
 
 		"####### Header 7\n",
-		"<h6># Header 7</h6>\n",
+		"<h7># Header 7</h7>\n",
 
 		"#Header 1\n",
-		"<h1>Header 1</h1>\n",
+		"<h2>Header 1</h2>\n",
 
 		"##Header 2\n",
-		"<h2>Header 2</h2>\n",
+		"<h3>Header 2</h3>\n",
 
 		"###Header 3\n",
-		"<h3>Header 3</h3>\n",
+		"<h4>Header 3</h4>\n",
 
 		"####Header 4\n",
-		"<h4>Header 4</h4>\n",
+		"<h5>Header 4</h5>\n",
 
 		"#####Header 5\n",
-		"<h5>Header 5</h5>\n",
+		"<h6>Header 5</h6>\n",
 
 		"######Header 6\n",
-		"<h6>Header 6</h6>\n",
+		"<h7>Header 6</h7>\n",
 
 		"#######Header 7\n",
-		"<h6>#Header 7</h6>\n",
+		"<h7>#Header 7</h7>\n",
 
 		"Hello\n# Header 1\nGoodbye\n",
-		"<p>Hello</p>\n\n<h1>Header 1</h1>\n\n<p>Goodbye</p>\n",
+		"<p>Hello</p>\n\n<h2>Header 1</h2>\n\n<p>Goodbye</p>\n",
 
 		"* List\n# Header\n* List\n",
-		"<ul>\n<li><p>List</p>\n\n<h1>Header</h1></li>\n\n<li><p>List</p></li>\n</ul>\n",
+		"<ul>\n<li><p>List</p>\n\n<h2>Header</h2></li>\n\n<li><p>List</p></li>\n</ul>\n",
 
 		"* List\n#Header\n* List\n",
-		"<ul>\n<li><p>List</p>\n\n<h1>Header</h1></li>\n\n<li><p>List</p></li>\n</ul>\n",
+		"<ul>\n<li><p>List</p>\n\n<h2>Header</h2></li>\n\n<li><p>List</p></li>\n</ul>\n",
 
 		"*   List\n    * Nested list\n    # Nested header\n",
 		"<ul>\n<li><p>List</p>\n\n<ul>\n<li><p>Nested list</p>\n\n" +
-			"<h1>Nested header</h1></li>\n</ul></li>\n</ul>\n",
+			"<h2>Nested header</h2></li>\n</ul></li>\n</ul>\n",
 
 		"#Header 1 \\#\n",
-		"<h1>Header 1 #</h1>\n",
+		"<h2>Header 1 #</h2>\n",
 
 		"#Header 1 \\# foo\n",
-		"<h1>Header 1 # foo</h1>\n",
+		"<h2>Header 1 # foo</h2>\n",
 
 		"#Header 1 #\\##\n",
-		"<h1>Header 1 ##</h1>\n",
+		"<h2>Header 1 ##</h2>\n",
 	}
 	doTestsBlock(t, tests, 0)
 }
@@ -149,22 +149,22 @@ func TestPrefixHeaderNoExtensions(t *testing.T) {
 func TestPrefixHeaderSpaceExtension(t *testing.T) {
 	var tests = []string{
 		"# Header 1\n",
-		"<h1>Header 1</h1>\n",
+		"<h2>Header 1</h2>\n",
 
 		"## Header 2\n",
-		"<h2>Header 2</h2>\n",
+		"<h3>Header 2</h3>\n",
 
 		"### Header 3\n",
-		"<h3>Header 3</h3>\n",
+		"<h4>Header 3</h4>\n",
 
 		"#### Header 4\n",
-		"<h4>Header 4</h4>\n",
+		"<h5>Header 4</h5>\n",
 
 		"##### Header 5\n",
-		"<h5>Header 5</h5>\n",
+		"<h6>Header 5</h6>\n",
 
 		"###### Header 6\n",
-		"<h6>Header 6</h6>\n",
+		"<h7>Header 6</h7>\n",
 
 		"####### Header 7\n",
 		"<p>####### Header 7</p>\n",
@@ -191,17 +191,17 @@ func TestPrefixHeaderSpaceExtension(t *testing.T) {
 		"<p>#######Header 7</p>\n",
 
 		"Hello\n# Header 1\nGoodbye\n",
-		"<p>Hello</p>\n\n<h1>Header 1</h1>\n\n<p>Goodbye</p>\n",
+		"<p>Hello</p>\n\n<h2>Header 1</h2>\n\n<p>Goodbye</p>\n",
 
 		"* List\n# Header\n* List\n",
-		"<ul>\n<li><p>List</p>\n\n<h1>Header</h1></li>\n\n<li><p>List</p></li>\n</ul>\n",
+		"<ul>\n<li><p>List</p>\n\n<h2>Header</h2></li>\n\n<li><p>List</p></li>\n</ul>\n",
 
 		"* List\n#Header\n* List\n",
 		"<ul>\n<li>List\n#Header</li>\n<li>List</li>\n</ul>\n",
 
 		"*   List\n    * Nested list\n    # Nested header\n",
 		"<ul>\n<li><p>List</p>\n\n<ul>\n<li><p>Nested list</p>\n\n" +
-			"<h1>Nested header</h1></li>\n</ul></li>\n</ul>\n",
+			"<h2>Nested header</h2></li>\n</ul></li>\n</ul>\n",
 	}
 	doTestsBlock(t, tests, EXTENSION_SPACE_HEADERS)
 }

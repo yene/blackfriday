@@ -199,9 +199,11 @@ func (options *Html) TitleBlock(out *bytes.Buffer, text []byte) {
 	out.WriteString("\n</h1>")
 }
 
-func (options *Html) Header(out *bytes.Buffer, text func() bool, level int, id string) {
+func (options *Html) Header(out *bytes.Buffer, text func() bool, l int, id string) {
 	marker := out.Len()
 	doubleSpace(out)
+
+	level := l + 1
 
 	if id == "" && options.flags&HTML_TOC != 0 {
 		id = fmt.Sprintf("toc_%d", options.headerCount)
